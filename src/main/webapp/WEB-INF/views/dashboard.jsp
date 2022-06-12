@@ -7,12 +7,12 @@
 <section class="dashboard-section">
     <div class="row dashboard-nowrap">
         <ul class="nav flex-column long-bg">
-            <li class="nav-item">
-                <a class="nav-link" href="/rim/dashboard/">
-                    <span>Pulpit</span>
-                    <i class="fas fa-angle-right"></i>
-                </a>
-            </li>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="/rim/dashboard/">--%>
+<%--                    <span>Pulpit</span>--%>
+<%--                    <i class="fas fa-angle-right"></i>--%>
+<%--                </a>--%>
+<%--            </li>--%>
             <li class="nav-item">
                 <a class="nav-link" href="/rim/list/">
                     <span>Lista felg</span>
@@ -20,13 +20,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/rim/findByProducer/">
+                <a class="nav-link" href="/rim/find/{name}">
                     <span>Wyszukaj felgę</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/app-edit-user-data.html">
+                <a class="nav-link" href="/rim/carsList">
                     <span>Modele aut z dopasowanymi felgami</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
@@ -84,7 +84,7 @@
                         </tr>
                         </thead>
 
-                        <c:forEach items="${rims}" var="rim">
+                        <c:forEach items="${rims}" var="rim" end="2" >
                             <tbody class="text-color-lighter">
                             <tr class="d-flex">
                                 <td class="col-1">${rim.id}</td>

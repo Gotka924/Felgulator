@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.car.CarRepository;
@@ -12,7 +12,6 @@ import pl.coderslab.producer.ProducerRepository;
 import pl.coderslab.suspension.SuspensionRepository;
 
 import javax.validation.Valid;
-import java.awt.print.Book;
 
 @Controller
 @RequestMapping("/rim")
@@ -36,25 +35,27 @@ public class RimController {
         return "list";
     }
 
-    @GetMapping("/dashboard")
-    public String show(Model model) {
-        System.out.println();
-        model.addAttribute("RimCount", rimCounter());  // - 2wywołanie metody zliczającej liczbę felg w bazie
-        model.addAttribute("rims", rimRepository.findAll());
-        //  model.addAttribute("cars", carRepository.findAll());
-        return "dashboard";
-    }
+//    @GetMapping("/dashboard")
+//    public String show(Model model) {
+//        System.out.println();
+//        model.addAttribute("RimCount", rimCounter());  // - 2wywołanie metody zliczającej liczbę felg w bazie
+//        model.addAttribute("rims", rimRepository.findAll());
+//        //  model.addAttribute("cars", carRepository.findAll());
+//        return "dashboard";
+//    }
 
-    @GetMapping("/find")
-    public String find(Model model) {
+    @GetMapping("/find/{name}")
+    public String find(Model model, @PathVariable String name) {
+        Rim rim = new Rim();
         model.addAttribute("rims", rimRepository.findAll());
+        model.addAttribute("rims", rim.getName());
         return "find";
     }
 
-    //1 - metoda zliczająca liczbę felg w bazie
-    public Long rimCounter() {
-        return rimRepository.count();
-    }
+//    //1 - metoda zliczająca liczbę felg w bazie
+//    public Long rimCounter() {
+//        return rimRepository.count();
+//    }
 
     @GetMapping("/search")
     public String showAddForm(Model model) {
@@ -70,11 +71,11 @@ public class RimController {
         float xp = (float) (72-(rim.getWidth() *25.6 / 2.0 - rim.getEt()));
         float xt = (float) (89-(rim.getWidth() *25.6 / 2.0 - rim.getEt()));
         if(xp > 0){
-            model.addAttribute("front", "Możesz zastosować felgę o podanych parametrach");
-        } else {model.addAttribute("front", "Niestety felga o podanych parametrach nie może być zastosowana");}
+            model.addAttribute("front", "&#9989 Możesz zastosować felgę o podanych parametrach");
+        } else {model.addAttribute("front", "&#10060 Niestety felga o podanych parametrach nie może być zastosowana");}
         if(xt > 0){
-            model.addAttribute("rear", "Możesz zastosować felgę o podanych parametrach");
-        } else {model.addAttribute("rear", "Niestety felga o podanych parametrach nie może być zastosowana");}
+            model.addAttribute("rear", "&#9989 Możesz zastosować felgę o podanych parametrach");
+        } else {model.addAttribute("rear", "&#10060 Niestety felga o podanych parametrach nie może być zastosowana");}
         model.addAttribute("xp", xp);
         model.addAttribute("xt", xt);
         return "checked";
@@ -96,6 +97,18 @@ public class RimController {
         }
         rimRepository.save(rim);
         return "redirect:/list";
+    }
+    @GetMapping("/carsList")
+    public String carsList(Model model) {
+        model.addAttribute("rims", rimRepository.findAll());
+        model.addAttribute("cars", carRepository.findAll());
+        return "carsList";
+    }
+    @GetMapping("/show/{id}")
+    public String show(Model model, @PathVariable Long id){
+        model.addAttribute("rims", rimRepository.findAllById(id));
+        model.addAttribute("producers", producerRepository.findAll());
+        return "show";
     }
 
 }

@@ -14,9 +14,10 @@
             <table class="table border-bottom" >
 
                 <tbody class="text-color-lighter">
-                <tr class="d-flex">
-<img src="/images/offset.jpg">
+                <tr class="d-flex center" style="font-size: xxx-large" >
+
 <td class="col-7"><a href="/rim/dashboard/" >   <P><FONT SIZE=7></FONT></P>Felgulator</a></td>
+
 
                 </tr>
                 </tbody>

@@ -26,10 +26,13 @@
                 Maksymalna grubość dystansu: <b>${xp} mm</b>
                 <br>
             </div>
-            <div>
+
+
+
+            <div style="margin-left: 30px">
             <b>          Oś tylna:</b>
                 <div>
-            ${rear}
+                    ${rear}
             <br>
                 </div>
                       Maksymalna grubość dystansu:<b> ${xt} mm</b>
