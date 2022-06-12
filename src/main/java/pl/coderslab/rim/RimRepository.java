@@ -10,4 +10,5 @@ public interface RimRepository extends JpaRepository<Rim, Long> {
 
 List<Rim> findAllById (Long id);
 
+
 }

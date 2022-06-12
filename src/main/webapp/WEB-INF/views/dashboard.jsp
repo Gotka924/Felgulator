@@ -48,7 +48,7 @@
                         </a>
                     </div>
                     <div class="menu-item border-dashed">
-                        <a href="/rim/add/">
+                        <a href="/rim/list/">
                             <i class="far fa-plus-square icon-plus-square"></i>
                             <span class="title">Przejrzyj bazę</span>
                         </a>

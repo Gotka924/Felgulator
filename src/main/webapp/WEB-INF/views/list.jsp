@@ -11,7 +11,7 @@
                 <h3 class="color-header text-uppercase">Lista felg</h3>
             </div>
             <div class="col d-flex justify-content-end mb-2 noPadding">
-                <a href="/addPlan.jsp" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Dodaj felgę</a>
+                <a href="/rim/add" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Dodaj felgę</a>
             </div>
         </div>
 
@@ -33,10 +33,11 @@
                         <td class="col-1">${rim.id}</td>
                         <td class="col-2">${rim.producer.name}</td>
                         <td class="col-2">${rim.name}</td>
-                        <td class="col-7">${rim.width}x${rim.avg} ${rim.boltPattern}x${rim.boltsNumber} ET${rim.et} DC${rim.centreBore}</td>
+                        <td class="col-5">${rim.width}x${rim.avg} ${rim.boltPattern}x${rim.boltsNumber} ET${rim.et} DC${rim.centreBore}</td>
 
-                        <td>
-                            <a href="<c:out value="rim/show/${rim.id}"/>">Pokaż szczegóły felgi</a>
+                        <td class="col-2">
+                            <a href="<c:out value="/rim/show/${rim.id}"/>">Pokaż szczegóły felgi</a>
+<%--                            <a href="<c:url value="/book-form/delete/${id}"/>">usuń</a>--%>
                         </td>
 
                     </tr>

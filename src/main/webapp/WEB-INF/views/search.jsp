@@ -33,7 +33,19 @@
     </form:select> <form:errors path="cars" />
     <br>
     <br>
+    <br>
+    <br>
+
     <input type="submit" value="Sprawdź felgę">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 </form:form>
         </div>

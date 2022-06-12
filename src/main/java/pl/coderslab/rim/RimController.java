@@ -1,5 +1,6 @@
 package pl.coderslab.rim;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -106,8 +107,10 @@ public class RimController {
     }
     @GetMapping("/show/{id}")
     public String show(Model model, @PathVariable Long id){
-        model.addAttribute("rims", rimRepository.findAllById(id));
-        model.addAttribute("producers", producerRepository.findAll());
+        Rim rim = new Rim();
+
+       model.addAttribute("rims", rimRepository.findAllById(id));
+
         return "show";
     }
 
