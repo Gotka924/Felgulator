@@ -3,7 +3,11 @@ package pl.coderslab;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import pl.coderslab.rim.Rim;
 import pl.coderslab.rim.RimRepository;
+
+import java.util.Collections;
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -23,7 +27,9 @@ public class HomeController {
     public String show(Model model) {
         System.out.println();
         model.addAttribute("RimCount", rimCounter());  // - 2wywołanie metody zliczającej liczbę felg w bazie
-        model.addAttribute("rims", rimRepository.findAll());
+        List<Rim> all = rimRepository.findAll();
+        Collections.reverse(all);
+        model.addAttribute("rims", all);
         //  model.addAttribute("cars", carRepository.findAll());
         return "dashboard";
     }

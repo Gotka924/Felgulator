@@ -4,11 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.car.CarRepository;
+import pl.coderslab.producer.Producer;
 import pl.coderslab.producer.ProducerRepository;
 import pl.coderslab.suspension.SuspensionRepository;
 
@@ -36,27 +34,13 @@ public class RimController {
         return "list";
     }
 
-//    @GetMapping("/dashboard")
-//    public String show(Model model) {
-//        System.out.println();
-//        model.addAttribute("RimCount", rimCounter());  // - 2wywołanie metody zliczającej liczbę felg w bazie
-//        model.addAttribute("rims", rimRepository.findAll());
-//        //  model.addAttribute("cars", carRepository.findAll());
-//        return "dashboard";
-//    }
-
     @GetMapping("/find/{name}")
     public String find(Model model, @PathVariable String name) {
-        Rim rim = new Rim();
-        model.addAttribute("rims", rimRepository.findAll());
-        model.addAttribute("rims", rim.getName());
+      //  Rim rim = new Rim();
+        model.addAttribute("rims", rimRepository.findByNameOrderByNameAsc(name));
+       // model.addAttribute("rims", rim.getName());
         return "find";
     }
-
-//    //1 - metoda zliczająca liczbę felg w bazie
-//    public Long rimCounter() {
-//        return rimRepository.count();
-//    }
 
     @GetMapping("/search")
     public String showAddForm(Model model) {
@@ -85,19 +69,17 @@ public class RimController {
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("cars", carRepository.findAll());
-        model.addAttribute("producers", producerRepository.findAll());
-        model.addAttribute("rims", new Rim());
+        model.addAttribute("producer", producerRepository.findAll());
+        model.addAttribute("rim", new Rim());
         return "add";
     }
 
     @PostMapping("/add")
-    public String save(@Valid Rim rim, BindingResult result, Model model) {
-        if(result.hasErrors()){
-           model.addAttribute("cars", carRepository.findAll());
-            return "add";
-        }
+    public String save(Rim rim , BindingResult result, Model model, @RequestParam Long aaa) {
+        Producer byproducerId = producerRepository.findByproducerId(aaa);
+        rim.setProducer(producerRepository.findByproducerId(aaa));
         rimRepository.save(rim);
-        return "redirect:/list";
+        return "redirect:/rim/list";
     }
     @GetMapping("/carsList")
     public String carsList(Model model) {
@@ -109,13 +91,12 @@ public class RimController {
     public String show(Model model, @PathVariable Long id){
         Rim rim = new Rim();
 
-       model.addAttribute("rims", rimRepository.findAllById(id));
+        model.addAttribute("rims", rimRepository.findAllById(id));
 
         return "show";
     }
 
 }
-
 
 
 

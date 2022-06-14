@@ -15,7 +15,6 @@ public class Rim {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size (min = 2, max = 20)
     private String name;
     @NotNull
     private int avg;  //2 średnica felgi wyrażona w calach
@@ -29,12 +28,20 @@ public class Rim {
     private int boltsNumber; //6 ilość śrub
     @NotNull
     private int boltPattern; //3 średnica osadzenia śrub
+    private String pic;
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
 
     @ManyToMany
     private List<Car> cars;
 
     @ManyToOne
-    @NotNull
     private Producer producer;
 
     public Long getWidth() {

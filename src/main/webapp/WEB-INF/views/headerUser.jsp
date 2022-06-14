@@ -18,12 +18,12 @@
 <body>
 <header class="page-header">
     <nav class="navbar navbar-expand-lg justify-content-between">
-        <a href="/rim/dashboard/" class="navbar-brand main-logo main-logo-smaller">
-            Dopasuj <span>Felgę</span>
+        <a href="/" class="navbar-brand main-logo main-logo-smaller" style="font-size: xxx-large">
+            <span>F e l g u l a t o r</span>
         </a>
         <div class="d-flex justify-content-around">
             <h4 class="text-light mr-3">${user.firstName}</h4>
-            <div class="circle-div text-center"><i class="fas fa-user icon-user"></i></div>
+            <div class="circle-div text-center"><i class="fas fa-life-ring"></i></div>
         </div>
 
     </nav>

@@ -4,8 +4,8 @@
 <%@ include file="headerUser.jsp" %>
 
 
-<div class="m-4 p-3 width-medium">
-    <div class="dashboard-content border-dashed p-3 m-4 view-height">
+<%--<div class="m-4 p-3 width-medium">--%>
+<%--    <div class="dashboard-content border-dashed p-3 m-4 view-height">--%>
 
 
 <html>
@@ -13,6 +13,11 @@
     <title>Pokaż szczegóły felgi</title>
 </head>
 <body>
+<div class="m-4 p-3 width-medium">
+    <div class="dashboard-content border-dashed p-3 m-4 view-height">
+        <div class="col d-flex justify-content-end mb-2 noPadding">
+            <a href="/rim/list" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Wróć do strony głównej</a>
+        </div>
 
 <table><tr><td>
 <h1>Szczegóły felgi</h1>
@@ -31,7 +36,7 @@
 </td>
     <td>
         <div style="margin-left: 330px">
-        <img src="/images/felgi.jpg">
+            <img src="/images/${rim.pic}" width="80%" height="80%">
         </div>
 
     </td>
@@ -39,37 +44,10 @@
 </table>
 
 </c:forEach>
+    </div>
+</div>
 
-
-
-
-
-<%--<table>--%>
-<%--    <thead>--%>
-<%--    <th>Nazwa</th>--%>
-<%--    <th>Szerokość</th>--%>
-<%--    <th>ET</th>--%>
-<%--    <th>Średnica</th>--%>
-<%--    <th>Srednica osadzenia śrub</th>--%>
-<%--    <th>DC</th>--%>
-<%--    <th>Ilość śrub</th>--%>
-<%--    <th>Producent</th>--%>
-<%--    </thead>--%>
-<%--    <tbody>--%>
-<%--    <tr>--%>
-<%--<c:forEach items="${rims}" var="rim">--%>
-<%--        <td><c:out value="${rim.name}"/></td>--%>
-<%--        <td><c:out value="${rim.width}"/></td>--%>
-<%--        <td><c:out value="${rim.et}"/></td>--%>
-<%--        <td><c:out value="${rim.avg}"/></td>--%>
-<%--        <td><c:out value="${rim.boltPattern}"/></td>--%>
-<%--        <td><c:out value="${rim.centreBore}"/></td>--%>
-<%--        <td><c:out value="${rim.boltsNumber}"/></td>--%>
-<%--        <td><c:out value="${rim.producer.name}"/></td>--%>
-<%--</c:forEach>--%>
-<%--    </tr>--%>
-<%--    </tbody>--%>
-<%--</table>--%>
 
 </body>
 </html>
+<%@ include file="footer.jsp" %>

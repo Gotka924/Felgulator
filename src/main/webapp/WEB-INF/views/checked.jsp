@@ -49,8 +49,13 @@
         <a href="/rim/add/"> Tak
 <%--        <input type="submit" value="Tak">--%>
             <a href="/rim/list/">
-        <b>         Nie<b>
+                <b>         Nie</b></a>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
 </div>
 
 

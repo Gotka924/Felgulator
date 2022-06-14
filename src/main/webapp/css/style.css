@@ -290,8 +290,8 @@ margin: 0 auto !important;
 /*------------------------------*/
 
 .icon-users {
-  font-size: 3rem;
-  padding: 0 5px 0 20px;
+  font-size: 2rem;
+  padding: 0 20px 0 20px;
   color: var(--link-color);
 }
 

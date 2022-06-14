@@ -14,7 +14,11 @@
     <div class="dashboard-header m-4">
         <div class="dashboard-menu">
 
-            <form:form method="post" modelAttribute="rims">
+            <form:form method="post" modelAttribute="rim">
+                Podaj nazwę felgi:
+                <form:input path="name"/>
+                <form:errors path="name"/>
+
                 Podaj szerokość felgi:
                 <form:input path="width"/>
                 <form:errors path="width"/>
@@ -42,6 +46,14 @@
                 <form:select path="cars" multiple="false">
                     <form:options items="${cars}"  itemValue="id" itemLabel="name"/>
                 </form:select> <form:errors path="cars" />
+                <select name="aaa">
+
+                    <c:forEach items="${producer}" var="info">
+                        <option value="${info.id}">${info.name}</option>
+                    </c:forEach>
+
+                </select>
+
                 <br>
                 <br>
                 <input type="submit" value="Dodaj felgę do bazy">

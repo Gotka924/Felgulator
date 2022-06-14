@@ -7,12 +7,12 @@
 <section class="dashboard-section">
     <div class="row dashboard-nowrap">
         <ul class="nav flex-column long-bg">
-<%--            <li class="nav-item">--%>
-<%--                <a class="nav-link" href="/rim/dashboard/">--%>
-<%--                    <span>Pulpit</span>--%>
-<%--                    <i class="fas fa-angle-right"></i>--%>
-<%--                </a>--%>
-<%--            </li>--%>
+            <%--            <li class="nav-item">--%>
+            <%--                <a class="nav-link" href="/rim/dashboard/">--%>
+            <%--                    <span>Pulpit</span>--%>
+            <%--                    <i class="fas fa-angle-right"></i>--%>
+            <%--                </a>--%>
+            <%--            </li>--%>
             <li class="nav-item">
                 <a class="nav-link" href="/rim/list/">
                     <span>Lista felg</span>
@@ -59,7 +59,7 @@
                 <div class="dashboard-alerts">
                     <div class="alert-item alert-info">
                         <i class="fas icon-circle fa-info-circle"></i>
-<%--                              przekazanie attributeName z RimController--%>
+                        <%--                              przekazanie attributeName z RimController--%>
                         <span class="font-weight-bold">Liczba dodanych felg do bazy: ${RimCount}</span>
 
                     </div>
@@ -88,7 +88,7 @@
                             <tbody class="text-color-lighter">
                             <tr class="d-flex">
                                 <td class="col-1">${rim.id}</td>
-<%--                                <td class="col-2">${rim.rim_cars.name}</td>--%>
+
                                 <td class="col-2">${rim.producer.name}</td>
                                 <td class="col-2">${rim.name}</td>
                                 <td class="col-7">${rim.width}x${rim.avg} ${rim.boltPattern}x${rim.boltsNumber} ET${rim.et} DC${rim.centreBore}</td>
