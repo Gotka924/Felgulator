@@ -7,31 +7,25 @@
 <section class="dashboard-section">
     <div class="row dashboard-nowrap">
         <ul class="nav flex-column long-bg">
-            <%--            <li class="nav-item">--%>
-            <%--                <a class="nav-link" href="/rim/dashboard/">--%>
-            <%--                    <span>Pulpit</span>--%>
-            <%--                    <i class="fas fa-angle-right"></i>--%>
-            <%--                </a>--%>
-            <%--            </li>--%>
+            <br><br><br><br>
             <li class="nav-item">
-                <a class="nav-link" href="/rim/list/">
+                <a class="nav-link" href="/rim/find/{name}">
                     <span>Lista felg</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
-            </li>
+            </li><br>
             <li class="nav-item">
-                <a class="nav-link" href="/rim/find/{name}">
+                <a class="nav-link" href="/rim/searchedRim/">
                     <span>Wyszukaj felgę</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/rim/carsList">
-                    <span>Modele aut z dopasowanymi felgami</span>
-                    <i class="fas fa-angle-right"></i>
-                </a>
-            </li>
-
+            </li><br>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="/rim/find/{name}">--%>
+<%--                    <span>Lista felg wg nazw</span>--%>
+<%--                    <i class="fas fa-angle-right"></i>--%>
+<%--                </a>--%>
+<%--            </li>--%>
         </ul>
 
         <div class="m-4 p-4 width-medium">

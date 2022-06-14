@@ -18,30 +18,37 @@
                 Podaj nazwę felgi:
                 <form:input path="name"/>
                 <form:errors path="name"/>
-
+                <br>
+                <br>
                 Podaj szerokość felgi:
                 <form:input path="width"/>
                 <form:errors path="width"/>
+                <br>
                 <br>
                 Podaj odsadzenie felgi - ET:
                 <form:input path="et"/>
                 <form:errors path="et"/>
                 <br>
+                <br>
                 Podaj średnicę felgi:
                 <form:input path="avg"/>
                 <form:errors path="avg"/>
+                <br>
                 <br>
                 Podaj średnicę osadzenia śrub:
                 <form:input path="boltPattern"/>
                 <form:errors path="boltPattern"/>
                 <br>
+                <br>
                 Podaj rozmiar otworu centrującego DC:
                 <form:input path="centreBore"/>
                 <form:errors path="centreBore"/>
                 <br>
+                <br>
                 Podaj ilość śrub:
                 <form:input path="boltsNumber"/>
                 <form:errors path="boltsNumber"/>
+                <br>
                 <br>
                 <form:select path="cars" multiple="false">
                     <form:options items="${cars}"  itemValue="id" itemLabel="name"/>

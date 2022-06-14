@@ -57,25 +57,3 @@
 
 <%@ include file="footer.jsp"%>
 
-<%--<div class="schedules-content">--%>
-<%--    <table class="table border-bottom">--%>
-<%--        <thead>--%>
-<%--        <tr class="d-flex">--%>
-<%--           --%>
-<%--        </tr>--%>
-<%--        </thead>--%>
-
-<%--        <c:forEach items="${rims}" var="rim">--%>
-<%--            <tbody class="text-color-lighter">--%>
-<%--            <tr class="d-flex">--%>
-<%--                <td class="col-1">${rim.id}</td>--%>
-<%--                    &lt;%&ndash;                                <td class="col-2">${rim.rim_cars.name}</td>&ndash;%&gt;--%>
-<%--                <td class="col-2">${rim.producer.name}</td>--%>
-<%--                <td class="col-2">${rim.name}</td>--%>
-<%--                <td class="col-7">${rim.width}x${rim.avg} ${rim.boltPattern}x${rim.boltsNumber} ET${rim.et} DC${rim.centreBore}</td>--%>
-<%--            </tr>--%>
-<%--            </tbody>--%>
-<%--        </c:forEach>--%>
-
-<%--    </table>--%>
-<%--</div>--%>

@@ -14,6 +14,8 @@ public interface RimRepository extends JpaRepository<Rim, Long> {
     @Query("select r from Rim r order by r.name")
     public List<Rim> findByNameOrderByNameAsc(String name);
 
+    @Query("select r from Rim r where r.name like ?1")
+    Rim findByrimId(Long rimId);
 
 
 }

@@ -7,11 +7,9 @@
 <div class="m-4 p-3 width-medium">
     <div class="dashboard-content border-dashed p-3 m-4 view-height">
         <div class="row border-bottom border-3 p-1 m-1">
-<%--            <div class="col noPadding">--%>
-<%--                <h3 class="color-header text-uppercase">Lista felg</h3>--%>
-<%--            </div>--%>
+
             <div class="col d-flex justify-content-end mb-2 noPadding">
-                <a href="/addPlan.jsp" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Dodaj felgę</a>
+                <a href="/" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Wróć do strony głównej</a>
             </div>
         </div>
 
@@ -20,10 +18,8 @@
                 <thead>
                 <tr class="d-flex">
                     <th class="col-1">ID</th>
-                    <th class="col-2">Producer</th>
-                    <th class="col-2">Name</th>
-<%--                    <th class="col-7">Cars</th>--%>
-
+                    <th class="col-5">Producer</th>
+                    <th class="col-5">Name</th>
                 </tr>
                 </thead>
 
@@ -31,10 +27,8 @@
                     <tbody class="text-color-lighter">
                     <tr class="d-flex">
                         <td class="col-1">${rim.id}</td>
-                        <td class="col-2">${rim.producer.name}</td>
-                        <td class="col-2">${rim.name}</td>
-<%--                        <td class="col-2">${rim.cars.name}</td>--%>
-
+                        <td class="col-5">${rim.producer.name}</td>
+                        <td class="col-5">${rim.name}</td>
                     </tr>
                     </tbody>
                 </c:forEach>

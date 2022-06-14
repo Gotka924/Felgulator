@@ -37,9 +37,7 @@
 
                         <td class="col-2">
                             <a href="<c:out value="/rim/show/${rim.id}"/>">Pokaż szczegóły felgi</a>
-
                         </td>
-
                     </tr>
                     </tbody>
                 </c:forEach>

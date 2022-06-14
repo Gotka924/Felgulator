@@ -7,8 +7,6 @@ public class CarController {
 
     private final CarRepository carRepository;
 
-
-
     public CarController(CarRepository carRepository) {
         this.carRepository = carRepository;
     }

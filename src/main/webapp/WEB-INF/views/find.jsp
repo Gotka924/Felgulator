@@ -19,9 +19,14 @@
             <table class="table border-bottom">
                 <thead>
                 <tr class="d-flex">
-                    <th class="col-2">Name</th>
-                    <th class="col-2">Producer</th>
-                    <th class="col-7">Description</th>
+                    <th class="col-2">Nazwa</th>
+                    <th class="col-2">Producent</th>
+                    <th class="col-1">Szerokość</th>
+                    <th class="col-1">ET(offset)</th>
+                    <th class="col-1">Średnica felgi</th>
+                    <th class="col-1">Średnica osadzenia śrub</th>
+                    <th class="col-1">Otwór centrujący</th>
+                    <th class="col-1">Ilość śrub</th>
 
                 </tr>
                 </thead>
@@ -31,11 +36,15 @@
                     <tr class="d-flex">
                         <td class="col-2">${rim.name}</td>
                         <td class="col-2">${rim.producer.name}</td>
-                        <td class="col-5">${rim.width}x${rim.avg} ${rim.boltPattern}x${rim.boltsNumber} ET${rim.et} DC${rim.centreBore}</td>
+                        <td class="col-1">${rim.width}</td>
+                        <td class="col-1">${rim.et}</td>
+                        <td class="col-1">${rim.avg}</td>
+                        <td class="col-1">${rim.boltPattern}</td>
+                        <td class="col-1">${rim.centreBore}</td>
+                        <td class="col-1">${rim.boltsNumber}</td>
 
                         <td class="col-2">
                             <a href="<c:out value="/rim/show/${rim.id}"/>">Pokaż szczegóły felgi</a>
-                                <%--                            <a href="<c:url value="/book-form/delete/${id}"/>">usuń</a>--%>
                         </td>
 
                     </tr>
